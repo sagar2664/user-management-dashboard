@@ -1,11 +1,20 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom";
+import { addUser } from "../services/api";
+import UserForm from "../components/UserForm";
 
 const AddUser = () => {
-  return (
-    <div>
-      AddUser
-    </div>
-  )
-}
+  const navigate = useNavigate();
 
-export default AddUser
+  const handleSubmit = async (user) => {
+    try {
+      await addUser(user);
+      navigate("/");
+    } catch (error) {
+      console.error("Error adding user:", error);
+    }
+  };
+
+  return <UserForm onSubmit={handleSubmit} />;
+};
+
+export default AddUser;

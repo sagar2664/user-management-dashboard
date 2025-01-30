@@ -28,12 +28,17 @@ const UserForm = ({ onSubmit, initialData }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    //console.log(name, value);
-    setUser((prev) => ({
-      ...prev,
-      [name]: value
-    }));
-    //console.log(user);
+    const keys = name.split('.');
+    console.log(name, value, keys);
+    setUser((prev) => {
+      let updatedUser = { ...prev };
+      let temp = updatedUser;
+      for (let i = 0; i < keys.length - 1; i++) {
+        temp = temp[keys[i]];
+      }
+      temp[keys[keys.length - 1]] = value;
+      return updatedUser;
+    });
   };
 
   const handleSubmit = (e) => {

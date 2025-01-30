@@ -3,6 +3,7 @@ import { getUsers } from "../services/api";
 import { deleteUser } from "../services/api";
 import UserCard from "./UserCard";
 import { useNavigate } from "react-router-dom";
+import { Appbar } from "./Appbar";
 
 const UserList = () => {
 
@@ -37,11 +38,14 @@ const UserList = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {users.map((user) => (
-                <UserCard key={user.id} user={user} onEdit={onEdit} onDelete={handleDelete} />
-            ))}
-        </div>
+        <>
+            <Appbar />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {users.map((user) => (
+                    <UserCard key={user.id} user={user} onEdit={onEdit} onDelete={handleDelete} />
+                ))}
+            </div>
+        </>
     );
 };
 

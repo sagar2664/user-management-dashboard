@@ -123,7 +123,7 @@ const UserForm = ({ onSubmit, initialData }) => {
   // I want to structure the form layout and include all necessary input fields
   return (
     <div className="bg-gray-200 flex justify-center items-center min-h-screen">
-      <form onSubmit={handleSubmit} className="bg-gray-100 w-full max-w-4xl p-8 bg-white shadow-md rounded-lg">
+      <form onSubmit={handleSubmit} className="bg-gray-100 w-full max-w-4xl p-8 shadow-md rounded-lg">
         <div className="space-y-6">
           <div className="border-b border-gray-900/10 pb-12">
             <div className="text-center">

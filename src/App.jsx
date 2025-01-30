@@ -1,5 +1,4 @@
 import { Route,BrowserRouter as Router, Routes } from 'react-router-dom'
-import {Home} from './pages/Home.jsx'
 import AddUser from './pages/AddUser.jsx'
 import EditUser from './pages/EditUser.jsx'
 import UserList from './components/UserList.jsx'
